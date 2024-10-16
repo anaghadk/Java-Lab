@@ -1,0 +1,76 @@
+import java.util.Scanner;
+class student{
+String usn, name;
+int m[]=new int[8];
+int c[]=new int[8];
+int g, es, tc;
+double sgpa;
+Scanner s=new Scanner(System.in);
+
+void details() {
+
+System.out.println("Enter usn: ");
+usn=s.next();
+System.out.println("Enter Name: ");
+name=s.next();
+System.out.println("Enter marks: ");
+for(int i=0;i<8;i++) {
+m[i]=s.nextInt();
+}
+System.out.println("Enter the credits for 8 subjects: ");
+for(int i=0;i<8;i++) {
+c[i]=s.nextInt();
+}
+}
+void display() {
+System.out.println("usn= "+" "+usn);
+System.out.println("Name= "+" "+name);
+System.out.println("Marks= ");
+for(int i=0;i<8;i++) {
+System.out.println("Marks of "+" "+(i+1)+" = "+m[i]);
+}
+}
+void sgpacalc() {
+System.out.println("usn= "+" "+usn);
+for(int i=0;i<8;i++) {
+if(m[i]==100) {
+g=m[i]/10;
+}
+else {
+g=(m[i]/10)+1;
+}
+es+=g*c[i];
+tc+=c[i];
+}
+sgpa=(double)es/(double)tc;
+if(sgpa<=4) {
+System.out.println("Fail"+" "+sgpa);
+} 
+else {
+System.out.println("Pass"+" "+sgpa);
+}
+}
+}
+class runn {
+public static void main(String z[]) {
+System.out.println("Anagha D K, 1BM23CS032 ");
+student st[]=new student[3];
+for(int i=0;i<3;i++) {
+st[i]=new student();
+}
+for(int j=0;j<3;j++) {
+System.out.println("Enter the details of"+" "+(j+1)+" Student: ");
+st[j].details();
+}
+for(int k=0;k<3;k++) {
+System.out.println("Details of: "+" "+(k+1)+" Student: ");
+st[k].display();
+}
+for(int i=0;i<3;i++) {
+System.out.println("sgpa of: "+" "+(i+1)+" Student: ");
+st[i].sgpacalc();
+}
+}
+}
+
+
