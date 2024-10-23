@@ -1,0 +1,69 @@
+Anagha D K
+1BM23CS032
+
+import java.util.Scanner;
+abstract class Shape {
+double d1,d2;
+Shape(double d1,double d2) {
+this.d1=d1;
+this.d2=d2;
+
+}
+abstract double printarea(); 
+
+}
+class Rectangle extends Shape {
+Rectangle(double a,double b) {
+super(a,b);
+}
+double printarea() {
+System.out.println("Area of the rectangle is: ");
+return d1*d2;
+}
+}
+
+class Triangle extends Shape {
+Triangle(double a,double b) {
+super(a,b);
+}
+double printarea() {
+System.out.println("Area of the Triangle is: ");
+return d1*d2/2;
+}
+}
+
+class Circle extends Shape {
+Circle(double a) {
+super(a,1);
+}
+double printarea() {
+System.out.println("Area of the circle is: ");
+return 3.14*d1*d2;
+}
+}
+class areas {
+public static void main(String args[]) {
+double d1,d2;
+Scanner s=new Scanner(System.in);
+System.out.println("Enter the dimensions of the rectangle:");
+d1=s.nextInt();
+d2=s.nextInt();
+
+Rectangle r = new Rectangle(d1,d2);
+System.out.println("Area is :"+r.printarea());
+
+System.out.println("Enter the dimensions of the Triangle:");
+d1=s.nextInt();
+d2=s.nextInt();
+
+Triangle t = new Triangle(d1,d2);
+System.out.println("Area is :"+t.printarea());
+
+System.out.println("Enter the dimensions of the Circle:");
+d1=s.nextInt();
+
+Circle c = new Circle(d1);
+
+System.out.println("Area is :"+c.printarea());
+}
+}
