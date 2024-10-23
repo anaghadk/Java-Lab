@@ -1,0 +1,57 @@
+import java.util.Scanner;
+class Book {
+String name, author;
+int price, npage;
+
+Book(String name, String author, int price, int npage)
+{
+    this.name=name;
+    this.author=author;
+    this.price=price;
+    this.npage=npage;
+}
+
+public String toString()
+{
+
+String name, author,price,npage;
+
+name = "Book name: "+this.name+"\n";
+
+author = "Author name:"+this.author+"\n";
+
+price = "Price: " +this.price+"\n";
+
+npage = "Number of pages: "+this.npage+"\n";
+return name+author+price+npage;
+
+}
+}
+class bookrun {
+public static void main(String args[]) {
+Scanner s=new Scanner(System.in);
+String name, author;
+int price, npage;
+int n;
+System.out.println("Enter the number of books");
+n=s.nextInt();
+Book b[]=new Book[n];
+
+for(int i=0;i<n;i++) {
+System.out.println("Enter book name");
+    name=s.next();
+    System.out.println("Enter book Author");
+    author=s.next();
+    System.out.println("Enter book price");
+    price=s.nextInt();
+    System.out.println("Enter the number of pages of the book ");
+    npage=s.nextInt();
+
+b[i]=new Book(name,author,price,npage);
+}
+for(int i=0;i<n;i++) {
+System.out.println(b[i].toString());
+}
+}
+
+}
