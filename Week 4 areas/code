@@ -38,7 +38,7 @@ super(a,1);
 }
 double printarea() {
 System.out.println("Area of the circle is: ");
-return 3.14*d1*d2;
+return 3.14*d1*d1;
 }
 }
 class areas {
