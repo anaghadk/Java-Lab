@@ -1,0 +1,84 @@
+import java.util.Scanner;
+class myException extends Exception{
+
+public String toString() {
+return "Age should be greater than zero";
+}
+}
+
+class myexcep extends Exception{
+public String toString() {
+return "Father's age should be greater than son's";
+}
+}
+
+class father {
+int fage;
+father(int fage) {
+this.fage=fage;
+
+}
+void wrongAge(int a) throws myException {
+if(a<=0) {
+throw new myException();
+}
+else{
+System.out.println("Valid Age "+a);
+}
+}
+void disp() {
+System.out.println("Father's age is: "+fage);
+}
+}
+
+class son extends father{
+int sage;
+son(int fage, int sage) {
+super(fage);
+this.sage=sage;
+
+}
+
+void checkage() throws myexcep {
+if(sage>fage) {
+throw new myexcep();
+}
+else
+{
+System.out.println("Valid, Son's age is "+sage);
+}}
+void disp2() {
+System.out.println("Son's age is: "+sage);
+}
+}
+
+class mrun{
+public static void main(String args[]) {
+Scanner s=new Scanner(System.in);
+int age1,age2;
+System.out.println("Anagha D K, 1BM23CS032");
+System.out.println("Enter the Father's age");
+age1=s.nextInt();
+father f=new father(age1);
+try{
+f.wrongAge(age1);
+
+}
+catch(myException e){
+
+System.out.println("Caught: "+e);
+}
+
+System.out.println("Enter the Son's age");
+age2=s.nextInt();
+son s1=new son(age1,age2);
+try{
+s1.checkage();
+
+}
+catch(myexcep e1){
+
+System.out.println("Caught: "+e1);
+}
+}
+}
