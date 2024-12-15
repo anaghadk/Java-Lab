@@ -1,37 +1,26 @@
 1BM23CS032
 
-  package SEE;
-import CIE.internals;
+
+import SEE.externals;
 import java.util.Scanner;
-public class externals extends internals {
-protected int seemarks[];
-protected int finalmarks[];
-
-public externals() {
-seemarks=new int[5];
-finalmarks=new int[5];
+class mainrun {
+  public static void main(String args[]) {
+    int n;
+    Scanner s=new Scanner(System.in);
+    System.out.println("Enter the number of students: ");
+    n=s.nextInt();
+    externals e[]=new externals[n];
+    for(int i=0;i<n;i++) {
+      e[i]=new externals();
+      e[i].input();
+      e[i].disp();
+      e[i].inpciemarks();
+      e[i].inpseemarks();
+      e[i].calcfinalmarks();
+      e[i].displayfinalmarks();
+    }
+  }
 }
-public void inpseemarks() {
-Scanner s= new Scanner(System.in);
-System.out.println("Enter SEE marks of 5 courses: ");
-for(int i=0;i<5;i++) {
-seemarks[i]=s.nextInt();
-}
-}
-public void calcfinalmarks() {
-for(int i=0;i<5;i++) {
-finalmarks[i]=seemarks[i]+marks[i];
-}
-}
-public void displayfinalmarks() {
-disp();
-System.out.println("Final marks are: ");
-for(int i=0;i<5;i++) {
-System.out.println(finalmarks[i]);
-}
-
-}
-
-}
+  
 
 
